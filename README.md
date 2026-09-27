@@ -1,46 +1,67 @@
 # QuizIT
 
-A Flutter quiz application.
+A multi-platform quiz application built with **Flutter/Dart** and a **Node.js + Express + MongoDB** backend.
+
+## Overview
+
+QuizIT is structured as a client-server application. The Flutter client is organised into reusable features, models, providers, widgets, routing, and shared utilities. The backend uses Express, MongoDB through Mongoose, JSON Web Tokens, and bcrypt-based password handling.
+
+## Tech Stack
+
+- **Client:** Flutter, Dart
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB, Mongoose
+- **Authentication:** JSON Web Tokens, bcryptjs
+- **Development:** Nodemon, Git
+
+## Project Structure
+
+- `lib/` — Flutter application source
+  - shared/common widgets
+  - feature-specific screens, services, and widgets
+  - models and providers
+  - routing and application configuration
+- `server/` — Node.js/Express backend
+- `android/`, `ios/`, `web/`, `linux/`, `macos/` — Flutter platform targets
+- `test/` — application tests
 
 ## Getting Started
 
-### Installing requisite
+### Prerequisites
 
-- Install Flutter.
-- Install Android Studio(We need it for Virtual Android Devices)
-- Install cmdline-tools from Android Studio SDK Manager.
-- Install VScode.
-- Install Git and Github.
-- Install Dart extension in VScode.
-- Install node.
+Install:
 
-### How to Run this application
+- Flutter SDK
+- Dart
+- Node.js and npm
+- Git
+- Android Studio or another supported Flutter development environment
 
-- Install Pre-requisite.
-- First go to the global variables file and change IP address to your there. (Steps to find your own IP v4 address -> Go to start  -> Type terminal -> Type "ipconfig" -> Check wireless LAN adaptor -> There u can find IP address)
-- Now in VS code right click on server folder open integrated terminal.
-- Then in terminal type "npm run dev".
-- Now run your application it's ready to use.
+### Run the backend
 
-### Folder Structure
+```bash
+cd server
+npm install
+npm run dev
+```
 
-- Common folder - This folder consist of all common things that will be used throughout the application.
-	- Widgets (This folder is place for a all common widgets we will use through out the app. stateless widgets are used)
+### Run the Flutter app
 
-- Constants folder - This folder consist thing that are gonna be constants throughout the program.
-	- Global_variables.dart (This file consist of all those variables which will be used through out the program.)
-	- error_handling.dart (In this we will define all those function which will tackle error handling throughout the application.)
-	- utils.dart (This file consist of some boiler-plate code that we dont want to type again and again.)
+Configure the backend host/IP in the application's global variables, then run:
 
-- Features - This folder consist of features we gonna provide in our application this folder follows a process to make any features i.e whenever anyone makes a feature there should be 3 folder's inside that feature folder named (Screens, Service, widgets)
-	- Screens (This folder consist the screens that your gonna make for your feature.)
-	- Service (Files in this folder will handle all networking related tasks such as calling an API for data posting or fetching.)
-	- Widgets (This will consist of files we make for custom widgets for that particular feature.)
+```bash
+flutter pub get
+flutter run
+```
 
-- Models - This folder will cosist of Models(Basically a class for your table data so u can fetch data of any user in its model and perform action.)
+## Key Engineering Areas
 
-- Provider - Basically consist of those functions which are gonna affect Provider Package(used for storing data locally for some user.)
+- Modular feature-based Flutter architecture
+- API-driven client/server communication
+- Authentication-ready backend dependencies
+- MongoDB data persistence
+- Reusable widgets, models, and provider-based state management
 
-- main.dart - It's starting point of our application from where app begins.
+## Repository
 
-- router.dart - In this file we define all the routes which we will use.
+GitHub: https://github.com/Sarikasoni23/QuizIT
